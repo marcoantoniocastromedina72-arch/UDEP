@@ -1,0 +1,829 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* NAVBAR CON DIMENSIONES ORIGINALES Y EFECTOS GLOW */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    /* Dimensiones robustas del primer ejemplo */
+    padding: 1rem 3rem; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    
+    /* Línea inferior dorada con glow neón */
+    border-bottom: 2px solid #bf953f;
+    box-shadow: 0 4px 20px rgba(191, 149, 63, 0.4); 
+}
+
+/* REPLICACIÓN DEL LOGO METALIZADO EN LA NAVBAR */
+.logo-nav {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    
+    /* Efecto Metalizado Idéntico */
+    background: linear-gradient(
+        135deg, 
+        #bf953f 0%, 
+        #fcf6ba 25%, 
+        #b38728 50%, 
+        #fbf5b7 75%, 
+        #aa771c 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Glow dorado/blanco del título principal */
+    filter: drop-shadow(0 0 10px rgba(252, 246, 186, 0.5));
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem; /* Espaciado ideal para los bloques */
+    margin: 0;
+    padding: 0;
+}
+
+/* EFECTOS GLOW EN LOS BOTONES AL PASAR EL CURSOR (HOVER) */
+.nav-links li a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+    background-color: rgba(191, 149, 63, 0.12); /* Fondo sutil dorado */
+    border-color: #fcf6ba; /* Borde brillante */
+    
+    /* Efecto de caja iluminada (Glow) */
+    box-shadow: 0 0 15px rgba(252, 246, 186, 0.3);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* PORTADA PRINCIPAL (HERO) */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #0f0c04 0%, #000000 100%);
+    overflow: hidden;
+}
+
+.backdrop-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(191, 149, 63, 0.15) 0%, rgba(0,0,0,0) 70%);
+    filter: blur(80px);
+    z-index: 1;
+}
+
+/* LOGO CENTRAL MAESTRO */
+.logo-luxury {
+    font-family: 'Cinzel', serif;
+    font-size: 6.5rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 20px;
+    text-align: center;
+    
+    background: linear-gradient(
+        135deg, 
+        #bf953f 0%, 
+        #fcf6ba 25%, 
+        #b38728 50%, 
+        #fbf5b7 75%, 
+        #aa771c 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    filter: drop-shadow(0 0 25px rgba(252, 246, 186, 0.4));
+    z-index: 5;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    letter-spacing: 10px;
+    color: #8e8e93;
+    margin-top: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* DESTELLOS */
+.sparkles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.sparkle {
+    position: absolute;
+    color: rgba(252, 246, 186, 0.4);
+    font-size: 1.2rem;
+    animation: parpadeo 4s infinite ease-in-out;
+}
+
+.s1 { top: 22%; left: 18%; animation-delay: 0s; }
+.s2 { top: 28%; right: 22%; animation-delay: 1s; }
+.s3 { bottom: 32%; left: 25%; animation-delay: 2s; }
+.s4 { bottom: 20%; right: 18%; animation-delay: 3s; }
+
+.scroll-indicator {
+    margin-top: 5rem;
+    font-size: 0.75rem;
+    color: #48484a;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 400;
+    animation: pulso 2s infinite ease-in-out;
+}
+
+/* ANIMACIONES */
+@keyframes parpadeo {
+    0%, 100% { opacity: 0; transform: scale(0.6) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1) rotate(45deg); }
+}
+
+@keyframes pulso {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+
+
+/* DISEÑO DEL CARRUSEL EXCLUSIVO */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden; /* Oculta los productos que no están activos */
+    border-radius: 12px;
+    padding: 1rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+.product-slide {
+    min-width: 100%; /* Cada slide ocupa todo el contenedor visible */
+    box-sizing: border-box;
+    background: #0d0d0d;
+    border: 1px solid rgba(191, 149, 63, 0.2);
+    padding: 3rem 2.5rem;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.product-badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #bf953f;
+    border: 1px solid rgba(191, 149, 63, 0.4);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+}
+
+.product-display {
+    font-size: 5rem;
+    margin: 2rem 0 1rem 0;
+    filter: drop-shadow(0 0 15px rgba(191, 149, 63, 0.3));
+}
+
+.product-slide h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.product-flow {
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+.product-flow strong {
+    color: #fcf6ba;
+    font-weight: 600;
+}
+
+/* BOTONES DE FLECHAS DORADAS */
+.carousel-arrow {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #bf953f;
+    color: #bf953f;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-arrow:hover {
+    background: #bf953f;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(252, 246, 186, 0.5);
+}
+
+.carousel-arrow.prev { left: -70px; }
+.carousel-arrow.next { right: -70px; }
+
+/* Hacer las flechas responsivas por si achican la pantalla */
+@media (max-width: 1024px) {
+    .carousel-arrow.prev { left: 10px; }
+    .carousel-arrow.next { right: 10px; }
+}
+
+
+/* ESTILIZACIÓN DEL ENCABEZADO DE LA SECCIÓN */
+.title-block {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.operacion-section .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 0;
+    
+    /* Le heredamos el efecto metalizado dorado premium del logo principal */
+    background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(191, 149, 63, 0.2));
+}
+
+.operacion-section .section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: #a1a1aa;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+}
+
+/* ESTILOS DEL NUEVO APARTADO TEÓRICO INFERIOR */
+.business-theory-block {
+    margin-top: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(191, 149, 63, 0.15); /* Separador dorado fino */
+}
+
+.theory-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.theory-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3.5rem auto;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.theory-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.step-box {
+    background: #080808;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.step-box:hover {
+    border-color: rgba(191, 149, 63, 0.3);
+    background: #0d0d0d;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+}
+
+.step-indicator-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #bf953f;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #fcf6ba;
+}
+
+.step-box h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: #bf953f;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.step-box p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 300;
+}
+
+
+
+
+/* ESTILOS SECCIÓN TAYLOR */
+.taylor-section {
+    background-color: #0a0a0a; /* Cambia sutilmente el tono de fondo para el scroll */
+    padding: 120px 0 80px 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(191, 149, 63, 0.1);
+}
+
+.taylor-section .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 0;
+    background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(191, 149, 63, 0.2));
+}
+
+.taylor-section .section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: #a1a1aa;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+}
+
+
+
+/* DISEÑO INNOVADOR: TIMELINE DE EFICIENCIA */
+.taylor-section {
+    background-color: #050505;
+    padding: 120px 0 80px 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(191, 149, 63, 0.1);
+}
+
+.taylor-intro-text {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 4rem auto;
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* Contenedor principal del flujo */
+.taylor-timeline {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    padding-left: 3rem; /* Espacio para la línea vertical */
+}
+
+/* Línea vertical dorada de fondo */
+.timeline-line {
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: linear-gradient(to bottom, #bf953f, rgba(191, 149, 63, 0.1));
+    box-shadow: 0 0 10px rgba(191, 149, 63, 0.3);
+}
+
+/* Elementos individuales del flujo */
+.timeline-item {
+    position: relative;
+    margin-bottom: 3.5rem;
+}
+
+/* Círculos numéricos interactivos */
+.timeline-dot {
+    position: absolute;
+    left: -48px;
+    top: 5px;
+    width: 32px;
+    height: 32px;
+    background-color: #000000;
+    border: 2px solid #bf953f;
+    color: #fcf6ba;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    z-index: 5;
+    box-shadow: 0 0 8px rgba(191, 149, 63, 0.4);
+    transition: all 0.4s ease;
+}
+
+/* Bloques de texto informativos */
+.timeline-content {
+    background: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    padding: 1.8rem 2.5rem;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* EFECTO INTERACTIVO: Expansión e iluminación */
+.timeline-item:hover .timeline-content {
+    transform: translateX(15px); /* Se desplaza sutilmente a la derecha */
+    background: #111111;
+    border-color: #bf953f;
+    box-shadow: 0 4px 25px rgba(191, 149, 63, 0.15);
+}
+
+.timeline-item:hover .timeline-dot {
+    background-color: #bf953f;
+    color: #000000;
+    box-shadow: 0 0 15px #fcf6ba;
+    transform: scale(1.15);
+}
+
+/* Tipografías internas */
+.timeline-content h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: #bf953f;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.timeline-content p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 300;
+}
+
+
+
+
+
+
+/* SECCIÓN FAYOL COMPLETA */
+.fayol-section {
+    background-color: #000000;
+    padding: 120px 0 80px 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(191, 149, 63, 0.1);
+}
+
+.title-block-fayol {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.section-title-fayol {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 0;
+    background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(191, 149, 63, 0.2));
+}
+
+.section-subtitle-fayol {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: #a1a1aa;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+}
+
+.fayol-intro-text {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 4rem auto;
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.fayol-plates-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Estilo base de cada placa horizontal */
+.fayol-plate {
+    display: flex;
+    align-items: center;
+    background: #0a0a0a;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    padding: 2rem;
+    border-radius: 4px; 
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Bloque izquierdo: Título */
+.plate-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.plate-title span {
+    color: #bf953f;
+    font-size: 0.8rem;
+    transition: color 0.4s ease;
+}
+
+.plate-title h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 1px;
+    transition: color 0.4s ease;
+}
+
+/* Bloque derecho: Descripción */
+.plate-desc {
+    flex: 2;
+    padding-left: 2rem;
+    border-left: 1px solid rgba(191, 149, 63, 0.2);
+    transition: border-color 0.4s ease;
+}
+
+.plate-desc p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 300;
+    transition: color 0.4s ease;
+}
+
+/* EFECTO INTERACTIVO: Inversión metálica de lujo */
+.fayol-plate:hover {
+    background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 50%, #aa771c 100%);
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(191, 149, 63, 0.2);
+    border-color: transparent;
+}
+
+.fayol-plate:hover .plate-title h3,
+.fayol-plate:hover .plate-title span,
+.fayol-plate:hover .plate-desc p {
+    color: #000000;
+}
+
+.fayol-plate:hover .plate-desc {
+    border-left-color: rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+/* SECCIÓN AUDITORÍA (EQUIPO) */
+.auditoria-section {
+    background-color: #050505;
+    padding: 120px 0 40px 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(191, 149, 63, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title-block-auditoria {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.section-title-auditoria {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 0;
+    background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(191, 149, 63, 0.2));
+}
+
+.section-subtitle-auditoria {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: #a1a1aa;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+}
+
+.auditoria-intro-text {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 4rem auto;
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* GRID DE GAFETES */
+.auditoria-team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+/* DISEÑO DE TARJETA CORPORATIVA */
+.auditor-card {
+    background: #0d0d0d;
+    border: 1px solid rgba(191, 149, 63, 0.15);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.auditor-badge {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #bf953f;
+    background: rgba(191, 149, 63, 0.08);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid rgba(191, 149, 63, 0.2);
+}
+
+.auditor-avatar {
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+    filter: drop-shadow(0 0 10px rgba(191, 149, 63, 0.2));
+}
+
+.auditor-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 1px;
+}
+
+.auditor-role {
+    color: #bf953f;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 2rem 0;
+    font-weight: 600;
+}
+
+.auditor-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1rem;
+    color: #64748b;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* INTERACTIVIDAD EN GAFETE */
+.auditor-card:hover {
+    transform: translateY(-5px);
+    border-color: #fcf6ba;
+    background: #111111;
+    box-shadow: 0 10px 30px rgba(191, 149, 63, 0.15);
+}
+
+/* CORRECCIÓN FOOTER FINAL */
+.sartoria-footer {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+    margin-top: auto;
+}
+
+.sartoria-footer p {
+    color: #475569;
+    font-size: 0.8rem;
+    margin: 0.3rem 0;
+}
+
+.footer-slogan {
+    font-family: 'Cinzel', serif;
+    color: rgba(191, 149, 63, 0.4) !important;
+    letter-spacing: 2px;
+    font-size: 0.75rem !important;
+}

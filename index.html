@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARTORIA - High Management & Fashion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR ROBUSTA INTERACTIVA -->
+    <nav class="navbar">
+        <div class="logo-nav">SARTORIA</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#operacion">Operación</a></li>
+            <li><a href="#taylor">Modelo Taylor</a></li>
+            <li><a href="#fayol">Estructura Fayol</a></li>
+            <li><a href="#quiz">Auditoría</a></li>
+        </ul>
+    </nav>
+
+    <!-- PORTADA HERO -->
+    <section id="inicio" class="hero-section">
+        <div class="backdrop-glow"></div>
+        <div class="sparkles-container">
+            <div class="sparkle s1">✦</div>
+            <div class="sparkle s2">✦</div>
+            <div class="sparkle s3">✦</div>
+            <div class="sparkle s4">✦</div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="logo-luxury">SARTORIA</h1>
+            <p class="tagline">NO ES MODA, ES PRESENCIA</p>
+            <div class="scroll-indicator">Desliza para explorar la empresa</div>
+        </div>
+    </section>
+
+               <!-- SECCIÓN 2: OPERACIÓN Y CATÁLOGO SIMPLIFICADO -->
+    <section id="operacion" class="operacion-section">
+        <div class="container">
+            <div class="title-block">
+                <h2 class="section-title">Colección & Operación</h2>
+                <p class="section-subtitle">Cómo funciona el día a día en nuestra tienda de ropa.</p>
+            </div>
+            
+            <!-- CONTENEDOR DEL CARRUSEL (Textos más sencillos) -->
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow prev" onclick="moverCarrusel(-1)">❮</button>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="track">
+                        <div class="product-slide">
+                            <div class="product-badge">Inventario</div>
+                            <div class="product-display">🧥</div>
+                            <h3>Abrigo de Lana</h3>
+                            <p class="product-flow"><strong>Llegada a tienda:</strong> La ropa llega en cajas desde las fábricas. Se cuenta pieza por pieza y se le pone una alarma de seguridad antes de pasar a la bodega.</p>
+                        </div>
+                        <div class="product-slide">
+                            <div class="product-badge">Exhibición</div>
+                            <div class="product-display">👔</div>
+                            <h3>Camisa de Vestir</h3>
+                            <p class="product-flow"><strong>Acomodo:</strong> Los empleados planchan y doblan las camisas usando una tabla de plástico para que todas queden exactamente del mismo tamaño en los estantes.</p>
+                        </div>
+                        <div class="product-slide">
+                            <div class="product-badge">Venta Físicas</div>
+                            <div class="product-display">👞</div>
+                            <h3>Mocasines de Piel</h3>
+                            <p class="product-flow"><strong>Atención:</strong> Si el cliente no encuentra su talla en el piso de venta, el vendedor revisa el sistema para ver si quedan pares guardados en la bodega trasera.</p>
+                        </div>
+                        <div class="product-slide">
+                            <div class="product-badge">Atención</div>
+                            <div class="product-display">💼</div>
+                            <h3>Maletín Ejecutivo</h3>
+                            <p class="product-flow"><strong>Entrega al Cliente:</strong> En la caja se cobra el producto en efectivo o tarjeta, se quita la alarma y se entrega la prenda envuelta en papel dentro de una bolsa de la marca.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow next" onclick="moverCarrusel(1)">❯</button>
+            </div>
+
+            <!-- APARTADO TEÓRICO SIMPLIFICADO -->
+            <div class="business-theory-block">
+                <h3 class="theory-title">Pasos Básicos del Negocio</h3>
+                <p class="theory-intro">Para que SARTORIA funcione de manera organizada, dividimos el trabajo en tres pasos muy claros:</p>
+                
+                <div class="theory-steps-grid">
+                    <div class="step-box">
+                        <div class="step-header">
+                            <span class="step-indicator-dot"></span>
+                            <h4>1. Comprar la Ropa</h4>
+                        </div>
+                        <p>Buscamos a los mejores proveedores para comprar ropa bonita y de buena calidad. Revisamos que las costuras y los botones estén perfectos antes de recibir la mercancía.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <div class="step-header">
+                            <span class="step-indicator-dot"></span>
+                            <h4>2. Acomodar la Tienda</h4>
+                        </div>
+                        <p>Ordenamos las prendas por secciones (sacos, camisas, pantalones) y por tallas (S, M, L, XL). Así es mucho más fácil para el cliente comprar y para los empleados limpiar.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <div class="step-header">
+                            <span class="step-indicator-dot"></span>
+                            <h4>3. Vender y Cobrar</h4>
+                        </div>
+                        <p>Los vendedores ayudan a los clientes en los probadores y los cajeros cobran de forma rápida en el mostrador. Al final del día se cuenta el dinero para revisar las ganancias.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+            <!-- SECCIÓN 3: MODELO DE TAYLOR (FLUJO DE EFICIENCIA INTERACTIVO) -->
+    <section id="taylor" class="taylor-section">
+        <div class="container">
+            <div class="title-block">
+                <h2 class="section-title">Modelo de Taylor</h2>
+                <p class="section-subtitle">Los 3 Pilares Científicos para entrenar al personal de SARTORIA.</p>
+            </div>
+
+            <p class="taylor-intro-text">Taylor buscaba la máxima eficiencia. En nuestra tienda, no dejamos el trabajo al azar; aplicamos pasos científicos para que cada empleado sea un experto en su puesto.</p>
+
+            <!-- CONTENEDOR DE LA LÍNEA DE TIEMPO / FLUJO -->
+            <div class="taylor-timeline">
+                <div class="timeline-line"></div>
+
+                <!-- Paso 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">01</div>
+                    <div class="timeline-content">
+                        <h3>Estandarizar el Tiempo</h3>
+                        <p>Analizamos cuánto se tarda un empleado en doblar playeras o acomodar ganchos. Encontramos la técnica más rápida y obligamos a todos a seguir ese mismo método para no perder minutos valiosos.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">02</div>
+                    <div class="timeline-content">
+                        <h3>Puesto Ideal para la Persona Ideal</h3>
+                        <p>No ponemos a la gente donde sea. Evaluamos las habilidades de cada quien: el que tiene facilidad de palabra va directo a piso de venta, y el que es rápido y exacto se encarga del conteo en bodega.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">03</div>
+                    <div class="timeline-content">
+                        <h3>Motivación con Incentivos</h3>
+                        <p>Para eliminar los tiempos muertos, premiamos el esfuerzo. El empleado que doble más prendas o atienda a más clientes de forma correcta recibe un bono extra de dinero al final del mes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+                <!-- SECCIÓN 4: ESTRUCTURA FAYOL (PLACAS INTERACTIVAS CORREGIDAS) -->
+    <section id="fayol" class="fayol-section">
+        <div class="container">
+            
+            <div class="title-block-fayol">
+                <h2 class="section-title-fayol">Estructura Fayol</h2>
+                <p class="section-subtitle-fayol">La organización clásica y jerárquica dentro de SARTORIA.</p>
+            </div>
+
+            <p class="fayol-intro-text">Henri Fayol estudiaba la empresa desde arriba hacia abajo. Él decía que para que un negocio funcione debe existir orden, jerarquía y reglas claras para evitar peleas o confusiones entre los jefes y los empleados.</p>
+
+            <!-- CONTENEDOR DE PLACAS HORIZONTALES -->
+            <div class="fayol-plates-container">
+                
+                <!-- Placa 1 -->
+                <div class="fayol-plate">
+                    <div class="plate-title">
+                        <span>✦</span>
+                        <h3>Unidad de Mando</h3>
+                    </div>
+                    <div class="plate-desc">
+                        <p>Cada cajero o vendedor en SARTORIA tiene únicamente un jefe directo: el Gerente de Sucursal. Así evitamos que dos superiores den órdenes diferentes al mismo tiempo y confundan al personal.</p>
+                    </div>
+                </div>
+
+                <!-- Placa 2 -->
+                <div class="fayol-plate">
+                    <div class="plate-title">
+                        <span>✦</span>
+                        <h3>División del Trabajo</h3>
+                    </div>
+                    <div class="plate-desc">
+                        <p>Separamos las actividades por departamentos especializados. El personal de cajas solo cobra, los asesores solo atienden clientes y el equipo de bodega solo organiza el stock. Hacer una sola tarea los vuelve expertos.</p>
+                    </div>
+                </div>
+
+                <!-- Placa 3 -->
+                <div class="fayol-plate">
+                    <div class="plate-title">
+                        <span>✦</span>
+                        <h3>Disciplina y Reglas</h3>
+                    </div>
+                    <div class="plate-desc">
+                        <p>Para mantener la presencia de la marca, todos siguen las mismas normas: usar el uniforme impecable, ser puntuales en su horario de entrada y mantener los estantes ordenados bajo los estándares de la empresa.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+        <!-- SECCIÓN 5: AUDITORÍA (PRESENTACIÓN DEL EQUIPO CONSULTOR) -->
+    <section id="quiz" class="auditoria-section">
+        <div class="container">
+            
+            <div class="title-block-auditoria">
+                <h2 class="section-title-auditoria">Auditoría</h2>
+                <p class="section-subtitle-auditoria">El equipo de consultores detrás del análisis administrativo de SARTORIA.</p>
+            </div>
+
+            <p class="auditoria-intro-text">Una empresa exitosa requiere una evaluación constante. Nuestro equipo se encargó de auditar las operaciones del negocio para asegurar que las teorías de Taylor y Fayol se apliquen con la máxima presencia y eficiencia en el mercado.</p>
+
+            <!-- GRID DEL EQUIPO CONSULTOR -->
+            <div class="auditoria-team-grid">
+                
+                <!-- Integrante 1 -->
+                <div class="auditor-card">
+                    <div class="auditor-badge">Auditor Principal</div>
+                    <div class="auditor-avatar">👤</div>
+                    <h3>Marco Antonio Castro Medina</h3>
+                    <p class="auditor-role">Especialista en Procesos Operativos</p>
+                    <div class="auditor-footer">Primer Cuatrimestre</div>
+                </div>
+
+                <!-- Integrante 2 -->
+                <div class="auditor-card">
+                    <div class="auditor-badge">Auditor Principal</div>
+                    <div class="auditor-avatar">👤</div>
+                    <h3>Ana Julia Gallegos Dominguez</h3>
+                    <p class="auditor-role">Especialista en Estructura Clásica</p>
+                    <div class="auditor-footer">Primer Cuatrimestre</div>
+                </div>
+
+                <!-- Integrante 3 -->
+                <div class="auditor-card">
+                    <div class="auditor-badge">Auditor Principal</div>
+                    <div class="auditor-avatar">👤</div>
+                    <h3>Karla Mariana Aguilar Rico</h3>
+                    <p class="auditor-role">Especialista en Eficiencia Industrial</p>
+                    <div class="auditor-footer">Primer Cuatrimestre</div>
+                </div>
+
+            </div>
+
+            <!-- PIE DE PÁGINA CORPORATIVO -->
+            <footer class="sartoria-footer">
+                <p>© 2026 SARTORIA. Todos los derechos reservados.</p>
+                <p class="footer-slogan">No es moda, es presencia.</p>
+            </footer>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
