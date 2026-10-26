@@ -827,3 +827,154 @@ body {
     letter-spacing: 2px;
     font-size: 0.75rem !important;
 }
+
+
+/* ==========================================================================
+   MEDIA QUERIES: AJUSTES PARA TELÉFONOS MÓVILES (PANTALLAS MENORES A 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* 1. NAVBAR: Ocultamos el menú largo para que no se amontone y centramos el logo */
+    .navbar {
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .logo-nav {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    /* Nota: Para una exposición es más cómodo dejar los links centrados y accesibles */
+    .nav-links {
+        gap: 0.5rem;
+        flex-wrap: wrap; /* Si no caben, se bajan solas */
+        justify-content: center;
+    }
+
+    .nav-links li a {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    /* 2. PORTADA (HERO): Achicamos las letras para que quepan en la pantalla del celular */
+    .logo-luxury {
+        font-size: 3.5rem; /* De 6.5rem baja a 3.5rem */
+        letter-spacing: 10px;
+    }
+
+    .tagline {
+        font-size: 0.75rem;
+        letter-spacing: 4px;
+        padding: 0 1rem;
+    }
+
+    .backdrop-glow {
+        width: 280px;
+        height: 280px; /* Reducimos el brillo de fondo para que no sature */
+    }
+
+    /* 3. TÍTULOS GENERALES */
+    .operacion-section, .taylor-section, .fayol-section, .auditoria-section {
+        padding: 100px 0 60px 0; /* Menos espacio arriba en móviles */
+    }
+
+    .section-title, .section-title-fayol, .section-title-auditoria {
+        font-size: 1.8rem; /* Títulos más cómodos para leer en vertical */
+    }
+
+    .section-subtitle, .section-subtitle-fayol, .section-subtitle-auditoria {
+        font-size: 0.85rem;
+        padding: 0 1rem;
+    }
+
+    .theory-intro, .taylor-intro-text, .fayol-intro-text, .auditoria-intro-text {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    /* 4. CARRUSEL: Ajustamos las flechas y los textos internos */
+    .carousel-wrapper {
+        padding: 0 0.5rem;
+    }
+
+    .product-slide {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .product-slide h3 {
+        font-size: 1.3rem;
+    }
+
+    .product-display {
+        font-size: 3.5rem;
+    }
+
+    .product-flow {
+        font-size: 0.85rem;
+    }
+
+    /* Flechas por encima del contenedor para que no se salgan de la pantalla */
+    .carousel-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    .carousel-arrow.prev { left: -5px; }
+    .carousel-arrow.next { right: -5px; }
+
+    /* 5. SECCIÓN TAYLOR (TIMELINE): Pasamos el diseño a una sola columna limpia */
+    .taylor-timeline {
+        padding-left: 1.5rem; /* Menos espacio de margen */
+    }
+
+    .timeline-line {
+        left: 5px; /* Movemos la línea dorada al borde izquierdo */
+    }
+
+    .timeline-dot {
+        left: -15px; /* Acomodamos los círculos numéricos sobre la línea */
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+    }
+
+    .timeline-content {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.85rem;
+    }
+
+    /* 6. GRIDS (OPERACIÓN, FAYOL Y AUDITORÍA) */
+    /* Forzamos a que las tarjetas se apilen una debajo de la otra en vertical */
+    .theory-steps-grid, .fayol-plates-container, .auditoria-team-grid {
+        grid-template-columns: 1fr !important; 
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    /* Ajustes específicos para las placas de Fayol en móvil */
+    .fayol-plate {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .plate-desc {
+        padding-left: 0;
+        border-left: none;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(191, 149, 63, 0.2);
+    }
+}
+
+
