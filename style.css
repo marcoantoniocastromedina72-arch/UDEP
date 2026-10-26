@@ -834,45 +834,49 @@ body {
    ========================================================================== */
 @media (max-width: 768px) {
     
-    /* 1. NAVBAR: Ocultamos el menú largo para que no se amontone y centramos el logo */
+     /* 1. NAVBAR CORREGIDA: Ajustamos las dimensiones generales para que respire */
     .navbar {
-        padding: 1rem 1.5rem;
+        padding: 0.8rem 1rem !important; /* Reducimos el grosor en celulares */
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 0.5rem;
     }
     
     .logo-nav {
-        font-size: 1.2rem;
-        letter-spacing: 2px;
+        font-size: 1.1rem !important;
+        letter-spacing: 2px !important;
     }
 
-    /* Nota: Para una exposición es más cómodo dejar los links centrados y accesibles */
     .nav-links {
-        gap: 0.5rem;
-        flex-wrap: wrap; /* Si no caben, se bajan solas */
+        gap: 0.3rem !important;
+        flex-wrap: wrap; 
         justify-content: center;
     }
 
     .nav-links li a {
-        font-size: 0.7rem;
-        padding: 0.4rem 0.6rem;
+        font-size: 0.65rem !important;
+        padding: 0.3rem 0.5rem !important;
     }
 
-    /* 2. PORTADA (HERO): Achicamos las letras para que quepan en la pantalla del celular */
+     /* 2. LOGO PRINCIPAL CORREGIDO (Aquí está el truco del desborde) */
     .logo-luxury {
-        font-size: 3.5rem; /* De 6.5rem baja a 3.5rem */
-        letter-spacing: 10px;
+        font-size: 11vw !important; /* Escala automáticamente con el ancho de la pantalla */
+        letter-spacing: 8px !important; /* Reducimos el espacio entre letras para que quepa completo */
+        line-height: 1.1 !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
     }
 
     .tagline {
-        font-size: 0.75rem;
-        letter-spacing: 4px;
-        padding: 0 1rem;
+        font-size: 0.7rem !important;
+        letter-spacing: 2px !important; /* Espaciado más corto para el eslogan */
+        padding: 0 1rem !important;
+        margin-top: 0.8rem !important;
     }
 
-    .backdrop-glow {
-        width: 280px;
-        height: 280px; /* Reducimos el brillo de fondo para que no sature */
+    .scroll-indicator {
+        margin-top: 3rem !important;
+        font-size: 0.65rem !important;
+        letter-spacing: 2px !important;
     }
 
     /* 3. TÍTULOS GENERALES */
